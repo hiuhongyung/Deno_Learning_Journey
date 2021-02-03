@@ -15,3 +15,9 @@ In fact, Deno is created by the founder of the Node.js which is created to solve
 - APIs like REST AND GRAPHql APIs
 
 There are numerous updates and improvements and lets start to explore it now!
+
+##What kind of Web App do we want to Build?
+1. APIs (provides endpoints which return json file — data) 
+-> require standalone frontend app
+2. Server-side rendered view (HTML element) 
+
