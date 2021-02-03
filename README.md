@@ -1,4 +1,4 @@
-# deno_learning_journey
+# Deno_Learning_Journey
 Deno is a nwe tool for us to run JS outside of the browser
 --> 1. support JS and TS
 --> 2. supports URL imports and modern JS features
