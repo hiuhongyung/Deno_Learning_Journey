@@ -64,4 +64,55 @@ app.use(router.allowedMethods());
 await app.listen({port: 3000});
 
 ```
+### Set up the server manually 
+```
+import { serve } from 'https://deno.land/std@0.51.0/http/server.ts';
+
+const server = serve({ port: 3000 });
+
+for await (const request of serve) {
+  if (
+    request.method === 'POST' &&
+    request.url === '/store-message' &&
+    request.contentLength
+  ) {
+    const buffer = new Uint8Array(request.contentLength);
+    let totalBytesRead = 0;
+
+    while (true) {
+      const bytesRead = await request.body.read(buffer);
+      if (bytesRead === null) {
+        break;
+      }
+      totalBytesRead += bytesRead;
+      if (totalBytesRead >= request.contentLength) {
+        break;
+      }
+    }
+
+    await Deno.writeFile('user-message.txt', buffer);
+    const decoder = new TextDecoder();
+    const data = decoder.decode(buffer);
+    console.log(data);
+
+    const headers = new Headers();
+    headers.set('Location', '/confirm');
+    request.respond({ headers: headers, status: 303 });
+  } else {
+    const headers = new Headers();
+    headers.set('Content-Type', 'text/html');
+
+    const body = `
+      <h2>Our First App</h2>
+      <form action="/store-message" method="POST">
+        <input type="text" name="message">
+        <button type="submit">Submit</button>
+      </form>
+    `;
+
+    request.respond({ body: body, headers: headers });
+  }
+}
+
+```
 
