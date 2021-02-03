@@ -27,7 +27,7 @@ Oak is a middleware-focused Deno framework for building web-application
 --> inspired by the "Koa" from "node.js"
 
 ### Comparison between setting up the web server manually and using Oak
-'''
+```
 //Set up the server by Oak
 import {Application, Router} from 'https://deno.land/x/oak/mod.ts'; //can specific the version for improving the stability 
 
@@ -63,6 +63,5 @@ app.use(router.allowedMethods());
 
 await app.listen({port: 3000});
 
-
-'''
+```
 
