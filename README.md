@@ -127,8 +127,8 @@ for await (const request of serve) {
 
 ### Connect Deno with MongoDB
 Official Rust MongoDB driver to connect to MongoDB db (Deno is built in Rust)
-deno_mongo is a MongoDB db driver developed for Deno based on Rust's official mongodb library package
-[deno_mongo's official doc](https://deno.land/x/mongo@v0.13.0)
+-> deno_mongo is a MongoDB db driver developed for Deno based on Rust's official mongodb library package
+-> [deno_mongo's official doc](https://deno.land/x/mongo@v0.13.0)
 
 
 
