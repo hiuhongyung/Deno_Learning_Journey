@@ -118,11 +118,11 @@ for await (const request of serve) {
 
 ```
 ## Ways to store data in Deno Apps
-1.) Store in Variables 
+1. Store in Variables 
 -> can provide quick access and great performance but data doesb't persist after restart the app
-2.) Store in File System
+2. Store in File System
 -> data is still there after restarting the app but relatively slow access 
-3.) Store in Database
+3. Store in Database
 -> data does persist and relatively fast access compare with FS
 
 
