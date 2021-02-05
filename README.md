@@ -125,5 +125,10 @@ for await (const request of serve) {
 3. Store in Database
 -> data does persist and relatively fast access compare with FS
 
+### Connect Deno with MongoDB
+Official Rust MongoDB driver to connect to MongoDB db (Deno is built in Rust)
+deno_mongo is a MongoDB db driver developed for Deno based on Rust's official mongodb library package
+[deno_mongo's official doc](https://deno.land/x/mongo@v0.13.0)
+
 
 
