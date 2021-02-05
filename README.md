@@ -31,6 +31,8 @@ Oak is a middleware-focused Deno framework for building web-application
 //Set up the server by Oak
 import {Application, Router} from 'https://deno.land/x/oak/mod.ts'; //can specific the version for improving the stability 
 
+
+
 const app = new Application();
 
 const router = new Router();
@@ -115,4 +117,13 @@ for await (const request of serve) {
 }
 
 ```
+## Ways to store data in Deno Apps
+1.) Store in Variables 
+-> can provide quick access and great performance but data doesb't persist after restart the app
+2.) Store in File System
+-> data is still there after restarting the app but relatively slow access 
+3.) Store in Database
+-> data does persist and relatively fast access compare with FS
+
+
 
